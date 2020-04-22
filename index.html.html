@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Gateway</title>
+	<link rel="stylesheet" type="text/css" href="search.css">
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<body>
+	<!-- <section id="search-box"> -->
+
+		<div class="loader">
+			<div id="mydiv">
+				<div id="mydivheader">
+					.
+				</div>
+
+				<h1>
+					<span class="g">G</span><span class="a">a</span><span class="t">t</span><span class="e">e</span><span class="w">w</span><span class="a">a</span><span class="y">y</span>
+				</h1>
+				<h1>
+					<span class="g">G</span><span class="a">a</span><span class="t">t</span><span class="e">e</span><span class="w">w</span><span class="a">a</span><span class="y">y</span>
+				</h1>
+			</div>
+		</div>
+
+		
+
+		<!-- <div id="search-container"> -->
+
+
+		<div>
+			<input type="checkbox" class="checkbox" id="checkbox">
+			<label for="checkbox" class="label">
+				<i class="fas fa-moon"></i>
+				<i class="fas fa-sun"></i>
+				<div class="ball"></div>
+			</label>
+		</div>
+
+		
+		<div class="btn3">
+			<a onclick="change_theme()" ><i class="fas fa-cog" style="font-size: 40px;"></i></a>
+		</div>
+			<form action="http://localhost/search.php" method="get" class="animated-form">
+				<!-- <i class="fa fa-search" aria-hidden="true" id="search-icon"></i> -->
+
+				
+
+
+				<div class="form-group">
+					<input type="text" name="q" class="search-text-field"></input>
+
+				</div>
+
+				<div id="mydiv2">
+					<div id="mydiv2header">
+						.
+					</div>
+
+					<!-- <div class="btn1"> -->
+						<input type="submit" class="ripple" value="Gateway search"></input>
+					<!-- </div> -->
+				</div>
+
+				<div id="mydiv3">
+					<div id="mydiv3header">
+						.
+					</div>
+
+					<!-- <div class="btn1"> -->
+					<input type="button" class="ripple" value="VOID Labs"></input>
+					<!-- </div> -->
+				</div>
+				
+
+			</form>
+		<!-- </div> -->
+
+	<!-- </section> -->
+	<!-- <script src="jquery.min.js"></script> -->
+
+	<script type="text/javascript">
+		const checkbox = document.getElementById('checkbox');
+		const dropdown = document.getElementById('dropdown');
+
+
+		checkbox.addEventListener('change', () => {
+			document.body.classList.toggle('dark');
+		});
+
+		
+
+		// dropdown.addEventListener('oncontextmenu', () => {
+
+		function change_theme() {
+			var txt;
+			var theme = prompt("Type a theme to toggle it.")
+			txt = theme;
+
+			if(txt == "none") {
+				window.location.reload();
+			} else if (txt=="water") { 
+				if(!document.body.classList.contains('space')) {
+					water_theme();
+				} else {
+					alert("There's no water in space.");
+				}
+			} else if(txt == "evaporate") {
+				evaporate_theme();
+			} else if(txt == "lava") {
+				if(!document.body.classList.contains('space')) {
+					lava_theme();
+				} else {
+					alert("There's no lava in space.");
+				}
+			} else if(txt == "space") {
+				space_theme();
+			}
+
+
+
+			alert(
+				"water: " + document.body.classList.contains('water')+"\n"+
+				"evaporate: " + document.body.classList.contains('evaporate')+"\n"+
+				"lava: " + document.body.classList.contains('lava') +"\n" +
+				"space: " + document.body.classList.contains('space')
+			);
+
+
+			
+		}
+
+
+
+		
+
+		function water_theme() {
+			document.body.classList.toggle('water');
+
+			
+		}
+
+		function evaporate_theme() {
+			document.body.classList.toggle('evaporate');
+		}
+
+		function lava_theme() {
+			document.body.classList.toggle('lava');
+		}
+
+		function space_theme() {
+			document.body.classList.toggle('space');
+			dragElement(document.getElementById("mydiv"));
+			dragElement(document.getElementById("mydiv2"));
+			dragElement(document.getElementById("mydiv3"));
+		}
+
+		function dragElement(elmnt) {
+		  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+		  if (document.getElementById(elmnt.id + "header")) {
+		    /* if present, the header is where you move the DIV from:*/
+		    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+		  } else {
+		    /* otherwise, move the DIV from anywhere inside the DIV:*/
+		    elmnt.onmousedown = dragMouseDown;
+		  }
+
+		  function dragMouseDown(e) {
+		    e = e || window.event;
+		    e.preventDefault();
+		    // get the mouse cursor position at startup:
+		    pos3 = e.clientX;
+		    pos4 = e.clientY;
+		    document.onmouseup = closeDragElement;
+		    // call a function whenever the cursor moves:
+		    document.onmousemove = elementDrag;
+		  }
+
+		  function elementDrag(e) {
+		    e = e || window.event;
+		    e.preventDefault();
+		    // calculate the new cursor position:
+		    pos1 = pos3 - e.clientX;
+		    pos2 = pos4 - e.clientY;
+		    pos3 = e.clientX;
+		    pos4 = e.clientY;
+		    // set the element's new position:
+		    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+		    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		  }
+
+		  function closeDragElement() {
+		    /* stop moving when mouse button is released:*/
+		    document.onmouseup = null;
+		    document.onmousemove = null;
+		  }
+		}
+
+		
+	</script>
+</body>
+</html>

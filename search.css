@@ -1,0 +1,497 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Arial";
+	box-sizing: border-box;
+	/*background: #262626;*/
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	transition: background 0.2s linear;
+
+}
+
+#mydiv2header {
+  padding: 10px;
+  z-index: 10;
+  /*background-color: #2196F3;*/
+  background-color: transparent;
+  color: transparent;
+
+  position: relative;
+  top: 400px;
+  right: 100px;
+
+  /*width: 100px;*/
+
+  /*position: absolute;*/
+  /*top: 00px;*/
+  /*height: 60px;*/
+  /*visibility: hidden;*/
+}
+
+#mydiv3header {
+  padding: 10px;
+  z-index: 10;
+  /*background-color: #2196F3;*/
+  background-color: transparent;
+  color: transparent;
+
+  position: relative;
+  top: 400px;
+  left: 50px;
+
+  /*width: 100px;*/
+
+  /*position: absolute;*/
+  /*top: 00px;*/
+  /*height: 60px;*/
+  /*visibility: hidden;*/
+}
+
+body.dark {
+	background-color: #292C35;
+}
+
+body.dark h1 {
+	color: #eeeeee;
+}
+
+body.evaporate .loader {
+	transform: translateY(-200px);
+	transition: 4s;
+	filter: blur(20px);
+	opacity: 0;
+}
+
+body.space .animated-form .form-group input[type="text"] {
+	animation: float_anim 16s ease-in-out infinite;
+}
+
+body.evaporate .loader {	
+	/*transform: translateY(200px);*/
+	transition: 4s;
+}
+
+body.evaporate .animated-form .form-group input[type="text"] {
+	border: none;
+	border-radius: 0px;
+	border-bottom: 3px solid #AAA;
+}
+
+body.evaporate .animated-form .form-group:focus-within input[type="text"] {
+	border-color: blue;
+}
+
+body.dark.evaporate .animated-form .form-group:focus-within input[type="text"] {
+	border-color: #FF6666;
+}
+
+body.dark .animated-form .form-group:focus-within input[type="text"] {
+	border-color: #FF6666;
+}
+
+
+
+/*body.rainbow .loader h1 {
+	color: transparent;
+	background-image: linear-gradient(to right, #f32170, #ffeb07, #2196f3, #ff00eb);
+	/*-webkit-text-fill-color:  linear-gradient(to right, #f32170, #ffeb07, #2196f3, #ff00eb);*/
+	/*-webkit-background-clip: text;*/
+
+}
+*/
+body.dark .animated-form .form-group:focus-within input[type="text"] {
+	border-color: #FE2E2E;
+}
+
+body.dark .ripple:hover {
+	outline: none;
+	border: 3px solid #FE2E2E;
+	background-color: #FF6666;
+	background-image: radial-gradient(circle, transparent 1%, #FF6666 1%);
+	background-position: center;
+	background-size: 15000%;
+
+	/*color: white;*/
+
+}
+
+body.dark .ripple:active {
+	transition: background 0s;
+	background-color: #FFB3B3;
+	background-size: 100%;
+	/*color: white;*/
+}
+
+
+
+
+
+
+
+
+.animated-form .form-group input[type="text"] {
+	position: absolute;
+	left: 25%;
+	top: 35%;
+	display: block;
+	width: 50%;
+	padding: 10px 0px;
+	border: none;
+	outline: none;
+	background: none;
+
+
+	border: 3px solid #AAA;
+	border-radius: 7px;
+
+	text-indent: 50px;
+
+	color: #666;
+	font-size: 20px;
+
+	transition: 0.25s ease-out;
+}
+
+
+.animated-form .form-group .search-text-field {
+	width: 0%;
+
+	transition: 0.25s ease-out;
+}
+
+
+.animated-form .form-group:focus-within input[type="text"] {
+
+	width: 50%;
+
+	border-color: #6617CB;
+
+}
+
+
+
+#mydiv2 input {
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: /*#2196f3*/#eeeeee;
+	box-shadow: 0 0 4px #999;
+	outline: 1px solid black;
+	color: black;
+
+	position: absolute;
+	/*left: 41.25%;*/
+	left: -190px;
+	top: 397.5px;
+}
+
+body.space #mydiv2 input {
+	animation: float_animT 16s ease-out infinite;
+}
+
+#mydiv3 input {
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: #eeeeee;
+	box-shadow: 0 0 4px #999;
+	outline: 1px solid black;
+	color: black;
+
+	position: absolute;
+	left: 51.25%;
+	top: 397.5px;
+}
+
+body.space #mydiv3 input {
+	animation: float_animT 16s ease-out infinite;
+}
+
+.btn3 {
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	cursor: pointer;
+	color: black;
+
+	position: fixed;
+	left: 6.5%;
+	top: 0.30%;
+}
+
+body.dark .btn3 .fa-cog {
+	color: #f1c40f;
+}
+
+
+body.space .btn3 {
+	animation: float_animT 8s ease-out infinite;
+}
+
+
+.ripple {
+	background-position: center;
+	transition: background 0.8s ease-out;
+}
+
+.ripple:hover {
+	outline: none;
+	border: 3px solid #6617CB;
+	background-color: #47a7f5;
+	background-image: radial-gradient(circle, transparent 1%, #47a7f5 1%);
+	background-position: center;
+	background-size: 15000%;
+
+	/*color: white;*/
+
+}
+
+.ripple:active {
+	transition: background 0s;
+	background-color: #6eb9f7;
+	background-size: 100%;
+	/*color: white;*/
+}
+
+.label {
+	background-color: #111;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 50px;
+	position: relative;
+	right: 1750%;
+	top: 20px;
+	padding: 5px;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+
+body.space .label {
+	background-color: #111;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 50px;
+	position: relative;
+	right: 1750%;
+	top: 20px;
+	padding: 5px;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+body.space .label {
+	transform: scale(1.5);
+	animation: float_animT 8s ease-in-out infinite;
+}
+
+.label:hover {
+	cursor: pointer;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+
+
+.ball {
+	background-color: #fff;
+	border-radius: 50%;
+	top: 2px;
+	left: 2px;
+	position: absolute;
+	height: 22px;
+	width: 22px;
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+}
+
+#mydiv2 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+}
+
+
+
+#mydiv3 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+}
+
+
+body.space #mydivheader {
+	  animation: float_anim 16s ease-out infinite;
+}
+
+body.space #mydiv2header {
+	  animation: float_anim 16s ease-out infinite;
+}
+
+body.space #mydiv3header {
+	  animation: float_anim 16s ease-out infinite;
+}
+
+#mydivheader {
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  color: transparent;
+  /*background-color: blue;*/
+  top: 100px;
+  width: 460px;
+  /*top: 00px;*/
+  /*height: 60px;*/
+  /*visibility: hidden;*/
+}
+
+
+
+
+
+.fa-sun {
+	color: #f1c40f;
+}
+
+
+body.space .loader h1 {
+	animation: float_anim 16s ease-in-out infinite;
+
+}
+
+
+.loader h1 {
+	position: absolute;
+	font-size: 8em;
+	font-weight: 200;
+}
+
+body.water .loader #mydiv h1:nth-child(2) {
+	color: transparent;
+	-webkit-text-stroke: 2px #03a9f4;
+}
+
+body.water .loader #mydiv h1:nth-child(3) {
+	color: #03a9f4;
+	animation: animate 4s ease-in-out infinite;
+}
+
+
+body.lava .loader #mydiv h1:nth-child(2) {
+	color: transparent;
+	-webkit-text-stroke: 2px orange;
+}
+
+body.lava .loader #mydiv h1:nth-child(3) {
+	color: orange;
+	animation: animate 4s ease-in-out infinite;
+
+}
+
+.loader {
+	position: absolute;
+	left: 707.5px;
+	top: 12%;
+}
+
+@keyframes float_anim {
+	0% {
+		transform: translate(0%, 0%);
+	}
+	50% {
+		transform: translate(20%, 60%);
+
+	}
+}
+
+@keyframes float_animT {
+	0%, 100% {
+			transform: scale(1.5);
+
+		transform: translate(0%, 0%);
+	}
+	50% {
+			transform: scale(1.5);
+
+		transform: translate(20%, 60%);
+	}
+}
+
+@keyframes animate {
+	0%,100% {
+		clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+	}
+}
+
+body.dark h1 .g {
+	color: #4285F4;
+}
+
+body.dark h1 .a {
+	color: #DB4437;
+}
+
+body.dark h1 .t {
+	color: #F4B400;
+}
+
+body.dark h1 .e {
+	color: #0F9D58;
+}
+
+body.dark h1 .w {
+	color: #4285F4;
+}
+
+body.dark h1 .y {
+	color: #4285F4;
+}
+
+body.space .loader #mydivheader:hover {
+	cursor: move;
+}
+
+body.space #mydiv2header:hover {
+	cursor: move;
+}
+
+body.space #mydiv3header:hover {
+	cursor: move;
+}
